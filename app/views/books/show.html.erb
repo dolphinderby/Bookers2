@@ -4,4 +4,7 @@
   <p>ユーザーネーム: <%= book.user.name %></p>
   <p>Title: <%= book.book_name %></p>
   <p>Opinion: <%= book.caption %></p>
+  <% if @book.user == current_user %>
+    <%= link_to "Destroy", book_path(@book), method: :delete %>
+  <% end %>
 </div>
