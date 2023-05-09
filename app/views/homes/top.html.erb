@@ -1,5 +1,13 @@
 <h1>welcome to Bookers!!</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<p>In
+  <strong>Bookers</strong>
+  ,
+</p>
+
+<p>you can share and exchange your opinions,inpressions,and emotions</p>
+
+<p>adout various books!</p>
+
 <% if user_signed_in? %>
   <li>
     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
