@@ -9,5 +9,5 @@ class Book < ApplicationRecord
       'no_image.jpg'
     end
   end
-  
+
 end

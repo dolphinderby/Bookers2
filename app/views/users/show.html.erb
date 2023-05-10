@@ -1,6 +1,7 @@
+<%= render 'books/list', books: @books %>
 <div>
   <h2>User info</h2>
-  
+
   <h3><%= @user.name %></h3>
   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 </div>

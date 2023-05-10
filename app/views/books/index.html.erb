@@ -1,11 +1,12 @@
+<%= render 'list', book: @book %>
 <h1>Books</h1>
 <% @books.each do |book| %>
+
 <div>
-  <%= image_tag user.get_image %>
-  <%= image_tag 'sample-author1.jpg' %>
+  <%= image_tag @user.get_profile_image %>
   <%= link_to book_path(book.id) do %>
-    Title: <%= book.book_name %>
+    Title: <%= book.title %>
   <% end %>
-  <p>Opinion: <%= book.caption %></p>
+  <p>Opinion: <%= book.body %></p>
 </div>
 <% end %>
