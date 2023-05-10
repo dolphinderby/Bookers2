@@ -1,3 +1,8 @@
+<%= render 'list', book: @book %>
+<dib>
+  <%= flash[:notice] %>
+</dib>
+<h1>Book detail</h1>
 <div>
   <%= image_tag @user.get_profile_image %>
   <p>ユーザーネーム: <%= @user.name %></p>
@@ -5,6 +10,6 @@
   <p>Opinion: <%= @book.body %></p>
   <% if @book.user == current_user %>
     <%= link_to "Edit", edit_book_path(@book.id) %>
-    <%= link_to "Destroy", book_path(@book), method: :delete %>
+    <%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %>
   <% end %>
 </div>
