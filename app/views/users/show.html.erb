@@ -1,14 +1,24 @@
 <div>
   <%= flash[:notice] %>
 </div>
-<%= render 'books/list', book: @books, user: @users %>
 
-<% @books.each do |book| %>
-<div>
-  <%= link_to user_path(@user.id) do %>
-    <%= image_tag @user.get_profile_image %>
-  <% end %>
-  <p>Title: <%= book.title %></p>
-  <p>Opinion: <%= book.body %></p>
+<div class="container">
+  <div class="row">
+    <%= render 'books/list', book: @books, user: @users %>
+      <div class="col-md-8 offset-md-1">
+        <h1>Books</h1>
+        <% @books.each do |book| %>
+        <div>
+          <%= link_to user_path(@user.id) do %>
+            <%= image_tag @user.get_profile_image %>
+          <% end %>
+          <p>Title</p>
+          <%= link_to book_path(book.id) do %>
+            <%= book.title %>
+          <% end %>
+          <p>Opinion: <%= book.body %></p>
+        </div>
+        <% end %>
+      </div>
+  </div>
 </div>
-<% end %>

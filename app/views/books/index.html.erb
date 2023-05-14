@@ -15,7 +15,7 @@
       <table class="table table-striped">
         <% @books.each do |book| %>
         <div>
-          <%= link_to user_path(@user.id) do %>
+          <%= link_to user_path(book.id) do %>
             <%= image_tag @user.get_profile_image %>
           <% end %>
           <%= link_to book_path(book.id) do %>
