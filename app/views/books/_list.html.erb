@@ -1,12 +1,20 @@
 
     <div class="col-md-3">
-      <table class="table table-striped">
-        <h1>User info</h1>
-        <%= image_tag @user.get_profile_image %>
-        <p>name: <%= @user.name %></p>
-        <p>introduction: <%= @user.introduction %></p>
-        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+      <h1>User info</h1>
+      <%= image_tag @user.get_profile_image %>
+      <table class="table">
+        <body>
+          <tr>
+            <th>name</th>
+            <th><%= @user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= @user.introduction %></th>
+          </tr>
+        </body>
       </table>
+        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
         <h1>New book</h1>
           <%= form_with model: book, url: '/books', method: :post do |f| %>
           <h4>Title</h4>
