@@ -12,7 +12,13 @@
           <th><%= @user.introduction %></th>
         </tr>
       </table>
-        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+        <div class="row">
+          <p class="btn btn-outline-secondary btn-block">
+          <%= link_to edit_user_path(@user) do %>
+            <i class="fas fa-user-cog"></i>
+          <% end %>
+          </p>
+        </div>
         <h1>New book</h1>
           <%= form_with model: book, url: '/books', method: :post do |f| %>
           <h4>Title</h4>
@@ -20,5 +26,5 @@
           <h4>Opinion</h4>
             <%= f.text_area :body %>
           <%= f.submit 'Create Book' %>
-        <% end %>
+          <% end %>
     </div>
